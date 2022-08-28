@@ -1,0 +1,88 @@
+.tpbman{
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+.tpbch1{
+    width: 50%;
+    padding: 1rem;
+}
+.tpbhey{
+    font-size: 1.5rem;
+    color: var(--white);
+    font-family: "poppinssemibold";
+
+}
+.tpbname1{
+    font-size: 2.5rem;
+    color: var(--white);
+    font-family: "poppinssemibold";
+}
+.tpbname2{
+    font-size: 2.5rem;
+    color: var(--yellow2);
+    font-family: "poppinssemibold";
+}
+.tpbname3{
+    font-size: 2.5rem;
+    color: var(--white);
+    font-family: "poppinssemibold";
+}
+.tpbdesc{
+    margin-top: 1rem;
+}
+.tpbdesc button{
+    background-color: var(--black2);
+    border-style: none;
+    border-radius: .2rem;
+    border: 1px solid var(--yellow2);
+    color: var(--white);
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+.tpbch2{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tpbch2 img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 600px) {
+    .tpbman{
+        padding: .5rem;
+    }
+    .tpbch1{
+        width: 60%;
+        padding: .5rem;
+    }
+    .tpbhey{
+        font-size: 1.7rem;  
+    }
+    .tpbname1{
+        font-size: 1.7rem;
+    }
+    .tpbname2{
+        font-size: 1.7rem;
+    }
+    .tpbname3{
+        font-size: 1.7rem;
+         }
+    .tpbdesc{
+        margin-top: .5rem;
+    }
+    .tpbch2{
+        width: 40%;
+    }
+    .tpbch2 img{
+        width: 100px;
+        height: 100px;
+    }
+    
+    
+}
+

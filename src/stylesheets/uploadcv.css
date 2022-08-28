@@ -1,0 +1,42 @@
+.upc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upcmain{
+    width: 30%;
+    background-color: var(--black1);
+    padding: 1rem;
+}
+.upcmain h3{
+    text-align: center;
+    color: var(--grey3);
+    font-family: "poppinssemibold";
+}
+.upcmain input{
+    display: block;
+    margin-bottom: 1rem;
+    color:var(--white);
+    font-family: "poppinsregular";
+}
+.upcmain button{
+    background-color: var(--black1);
+    border-style: none;
+    border: 1px solid var(--yellow2);
+    padding: .5rem 1rem;
+    cursor: pointer;
+    color: var(--white);
+    font-family: "poppinsregular";
+}
+@media only screen and (max-width: 768px) {
+    .upcmain{
+        width: 80%;
+         }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    .upcmain{
+        width: 45%;
+         }
+}

@@ -1,0 +1,71 @@
+.tech1{
+    padding: 1rem;
+}
+.tech1 h1{
+    color: var(--yellow2);
+    text-align: center;
+}
+.tecman{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.techcard{
+    width: 300px;
+    min-height: 120px;
+    padding: .8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black1);
+    margin: .6rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.techcard img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.techcardch1{
+    margin-left: .5rem;
+}
+.techcardch1 h3{
+    margin: 0;
+    padding: 0;
+    color: var(--grey3);
+    text-align: start;
+    font-family: "poppinsmedium";
+}
+.techcardch1 p{
+    margin-top: .5rem;
+    padding: 0;
+    color: var(--grey3);
+    text-align:start;
+    font-family: "poppinsregular";
+    font-size: .7rem;
+    line-height: 1rem;
+}
+@media only screen and (max-width: 600px) {
+    .tech1{
+        padding: .5rem;
+    }       
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}

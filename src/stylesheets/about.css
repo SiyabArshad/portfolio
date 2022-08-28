@@ -1,0 +1,57 @@
+.abmain{
+    min-height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.abmainch1{
+    width: 50%;
+    background-color: var(--black1);
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.abmainch1 span{
+    font-size: "poppinssemibold";
+    color: var(--grey3);
+    font-size: 1.5rem;
+}
+
+.abmain p{
+    font-size: "poppinsregular";
+    color: var(--grey3);
+    font-size: .8rem;
+    text-align: justify;
+    line-height: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .abmainch1{
+        width: 85%;
+        padding: .5rem;
+    }
+    .abmainch1 span{
+        font-size: 1.1rem;
+    }
+    
+    .abmain p{
+        color: var(--grey3);
+        font-size: .7rem;
+        line-height: 1rem;
+    }
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .abmainch1{
+        width: 60%;
+         }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    .abmainch1{
+        width: 55%;
+         }
+}

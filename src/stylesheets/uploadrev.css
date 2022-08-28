@@ -1,0 +1,84 @@
+
+.upr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.uprmain{
+    width: 30%;
+    background-color: var(--black1);
+    padding: 1rem;
+}
+.uprmain h3{
+    text-align: center;
+    color: var(--grey3);
+    font-family: "poppinssemibold";
+}
+.uprmain button{
+    background-color: var(--black1);
+    border-style: none;
+    border: 1px solid var(--yellow2);
+    padding: .5rem 1rem;
+    cursor: pointer;
+    color: var(--white);
+    font-family: "poppinsregular";
+}
+.source{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.source label{
+    color: var(--grey3);
+    font-size: .9rem;
+    font-family: "poppinsregular";
+    margin-bottom: .2rem;
+
+}
+.source select,input{
+    width: 50%;
+    padding: .35rem .7rem;
+    background-color: var(--black2);
+    color: var(--grey3);
+    font-family: "poppinsmedium";
+    outline: none;
+    border-style: none;
+    border: 1px solid var(--grey3);
+}
+.uprdesc{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.uprdesc label{
+    color: var(--grey3);
+    font-size: .9rem;
+    font-family: "poppinsregular";
+    margin-bottom: .2rem;
+
+}
+.uprdesc textarea{
+    width: 80%;
+    min-height: 150px;
+    padding: .35rem .7rem;
+    background-color: var(--black2);
+    color: var(--grey3);
+    font-family: "poppinsmedium";
+    outline: none;
+    border-style: none;
+    border: 1px solid var(--grey3);
+}
+
+@media only screen and (max-width: 600px) {
+    .uprmain{
+        width: 95%;
+         }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width:800px) {
+    .uprmain{
+        width: 65%;
+         }
+}

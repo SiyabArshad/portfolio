@@ -1,0 +1,30 @@
+.navmainbg{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navmainbg ul{
+    list-style: none;
+}
+.navmainbg ul li{
+    display: inline-block;
+    color: var(--white);
+    font-size: 1rem;
+    font-family: "poppinsregular";
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .navmainbg{
+        padding: .5rem 0rem ;
+    }
+    .navmainbg ul li{
+        margin-right: .5rem;
+        font-size: .8rem;
+    }
+        
+}

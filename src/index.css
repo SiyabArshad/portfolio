@@ -1,3 +1,52 @@
+:root{
+--black2:#1C1C1C;
+--black1:#2F2F2F;
+--white:#FFFF;
+--grey1:#F1F1F1;
+--grey2:#E1E1E1;
+--grey3:#828282;
+--yellow1:#EEBF63;
+--yellow2:#CD921E;
+--blue:#90C0E8;
+--green:#6FC2C5;
+--green2:#386163;
+}
+@font-face {
+  font-family: "poppinsregular";
+  src: local("popinsregular"),
+   url("./Assets/Fonts/Poppins-Regular.ttf") format("truetype");
+  }
+  
+@font-face {
+    font-family: "poppinsbold";
+    src: local("popinsbold"),
+     url("./Assets/Fonts/Poppins-Bold.ttf") format("truetype");
+    }  
+@font-face {
+      font-family: "poppinsbolditalic";
+      src: local("popinsbolditalic"),
+       url("./Assets/Fonts/Poppins-BoldItalic.ttf") format("truetype");
+      }  
+@font-face {
+      font-family: "poppinsmedium";
+      src: local("popinsmedium"),
+       url("./Assets/Fonts/Poppins-Medium.ttf") format("truetype");
+      }
+@font-face {
+        font-family: "poppinsmediumitalic";
+        src: local("popinsmediumitalic"),
+         url("./Assets/Fonts/Poppins-MediumItalic.ttf") format("truetype");
+        }        
+@font-face {
+        font-family: "poppinssemibold";
+        src: local("popinssemibold"),
+         url("./Assets/Fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "poppinssemibolditalic";
+  src: local("popinssemibolditalic"),
+   url("./Assets/Fonts/Poppins-SemiBoldItalic.ttf") format("truetype");
+}            
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +54,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--black2);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.swiper-pagination-bullet-active {
+  background-color:var(--yellow2) !important;
+}
+
+.swiper-button-next {
+  color:var(--yellow2) !important;
+}
+
+.swiper-button-prev {
+  color:var(--yellow2) !important;
+}
+.link{
+  color: inherit;
+  text-decoration: none;
 }

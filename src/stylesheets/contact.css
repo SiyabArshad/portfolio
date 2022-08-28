@@ -1,0 +1,54 @@
+.cn1{
+    padding: 1rem;
+}
+.cn1 h3{
+    color: var(--yellow2);
+    font-size: 1.2rem;
+    text-align: center;
+}
+.cn1 h5{
+    color: var(--yellow2);
+    text-align: center;
+}
+.cnman{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cnitem{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black1);
+    margin-right: .5rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+.cnitem img{
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 600px) {
+    .cn1{
+        padding: .5rem;
+    }
+    .cnitem{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    .cnitem img{
+        height: 25px;
+        width: 25px;
+    }
+               
+}

@@ -1,0 +1,101 @@
+.proman{
+    padding: 1rem;
+}
+.promanch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.promanchch1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.promanchch1 span{
+    font-family: "poppinsregular";
+    margin-right: .5rem;
+    color: var(--white);
+    background-color: var(--yellow2);
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+}
+.promanchch2{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.projectcard{
+    width: 300px;
+    min-height: 250px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1rem;
+    margin: .5rem;
+    background-color: var(--black1);
+}
+.projectcard h3{
+    color: var(--grey3);
+    font-family: "poppinsmedium";
+}
+.projectcard p{
+    color: var(--grey3);
+    font-size: .8rem;
+    line-height: 1.2rem;
+    font-family: "poppinsregular";
+    margin-bottom: 1rem;
+}
+.github{
+    font-size: .8rem;
+    border:1px solid var(--yellow2);
+    padding: .5rem 1rem;
+    color: var(--grey1);
+    margin-top: .5rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+.details{
+    font-size: .8rem;
+    border:1px solid var(--yellow2);
+    padding: .5rem 1rem;
+    color: var(--grey1);
+    margin-top: .5rem;
+    margin-left: .5rem;
+    cursor: pointer;
+}
+
+.readmore{
+    font-size: .8rem;
+    border:1px solid var(--yellow2);
+    padding: .5rem 1rem;
+    color: var(--grey1);
+    margin-top: .5rem;
+    margin-left: .5rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .proman{
+        padding: .5rem;
+    }
+    .promanchch2{
+        width: 95%;
+         }
+    
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .promanchch2{
+        width: 80%;
+         }
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    
+}

@@ -1,0 +1,56 @@
+.detailsmain{
+    padding: 1rem;
+}
+.dtback{
+    background-color: var(--yellow2);
+    padding: .5rem 1rem;
+    border-style: none;
+    color: var(--white);
+    cursor: pointer;
+}
+.detpro{
+    color: var(--grey3);
+    font-size: 1.3rem;
+    font-family: "poppinsmedium";
+}
+.detdesc{
+    
+    color: var(--grey3);
+    line-height: 1.3rem;
+    font-family: "poppinsregular";
+    font-size: .8rem;
+    text-align: justify;
+}
+.detims{
+    color: var(--grey3);
+    font-size: 1.1rem;
+    font-family: "poppinsmedium";
+}
+.detvideo{
+    width: 100%;
+    height: 300px;
+}
+.img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
+ 
+  @media only screen and (max-width: 600px) {
+        
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}

@@ -1,20 +1,41 @@
 
 import * as React from 'react'
 import "../stylesheets/project.css"
-export default function AdminProjects() {
-    return (
+import Loading from "../components/Loading"
+import {doc,setDoc,getFirestore, addDoc, getDocs,collection,getDoc,serverTimestamp, deleteDoc,updateDoc,query,where,orderBy,limit, startAt} from "firebase/firestore"
+import app from '../firebase'
+export default function AdminProjects({projects}) {
+    const db=getFirestore(app)
+    const[loading,setloading]=React.useState(false)
+    const deletefunction=async(id)=>{
+        setloading(true)
+        await deleteDoc(doc(db,"projects",id))
+        window.location.reload(true)
+        setloading(false)
+    }
+    if(loading)
+    {
+      return(
+        <Loading></Loading>
+      )
+    }
+    else
+    {
+      return (
     <div className='proman'>
         <div className='promanch'>
             <div className='promanchch2'>
             {
-                [1,2,3,4,5].map((item)=>(
+                projects?.map((item)=>(
               
                     <div className='projectcard'>
-                        <h3>Name of the project</h3>
+                        <h3>{item.data.name}</h3>
                         <p>
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, impedit odio quam officia fugit iure sed doloremque, illo, provident voluptates recusandae? Voluptatum saepe voluptatem a vero. Consectetur reiciendis beatae aliquam? 
+                          {
+                            item.data.desc
+                          } 
                         </p>
-                        <span className='github'>Delete</span>
+                        <span onClick={()=>deletefunction(item.id)} className='github'>Delete</span>
                     </div>
                 
                 ))
@@ -23,4 +44,5 @@ export default function AdminProjects() {
     </div>
     </div>
   )
+}
 }

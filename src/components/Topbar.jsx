@@ -1,6 +1,14 @@
 import React from 'react'
 import "../stylesheets/topbar.css"
-export default function Topbar() {
+import { saveAs } from "file-saver";
+
+export default function Topbar({cv}) {
+  const downloadfunc=()=>{
+    saveAs(
+      cv.url,
+      "SiyabArshad_CV.pdf"
+    );
+  }
   return (
     <div className='tpbman'>
         <div className='tpbch1'>
@@ -11,10 +19,10 @@ export default function Topbar() {
             <br></br>
             <span className='tpbname3'>an FullStack Developer.</span>
             <div className='tpbdesc'>
-            <button>
+            <button onClick={downloadfunc}>
                 Download CV
             </button>
-        </div>
+         </div>
         </div>
 
         <div className='tpbch2'>

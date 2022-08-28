@@ -1,9 +1,12 @@
 import "../stylesheets/navbar.css"
 import * as React from 'react'
+import { getAuth,signOut} from "firebase/auth";
+import app from "../firebase"
 
 export default function AdminNav({receiver}) {
   const[activebutton,setactivebutton]=React.useState("projects")
-    return (
+  const auth=getAuth(app) 
+  return (
     <div className="navmainbg">
         <ul>
             <li 
@@ -35,8 +38,9 @@ export default function AdminNav({receiver}) {
             </li>
             <li
             style={{color:activebutton==="logout"?"#CD921E":"#FFFF"}}
-            onClick={()=>{
+            onClick={async()=>{
                 setactivebutton("logout") 
+                await signOut(auth)
             }}
             >
                 Logout

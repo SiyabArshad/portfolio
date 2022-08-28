@@ -7,6 +7,11 @@
     align-items: center;
     flex-direction: column;
 }
+.promanch h1{
+    color: var(--yellow2);
+    font-size: 1.2rem;
+    text-align: center;
+}
 .promanchch1{
     display: flex;
     justify-content: center;

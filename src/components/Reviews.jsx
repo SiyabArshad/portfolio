@@ -12,7 +12,7 @@ import 'swiper/css/autoplay';
 
 import 'swiper/css/free-mode';
 import { FreeMode } from 'swiper';
-export default function Reviews() {
+export default function Reviews({reviews}) {
   return (
    
     <div className='revmain'>
@@ -43,20 +43,20 @@ export default function Reviews() {
     }}
     >
     {
-      [1,2,3,4,5,6,7].map((item,i)=>{
+      reviews.map((item,i)=>{
         return(
       <SwiperSlide>
       <div className='revcard'>
       <div className='revcardch1'>
-      <img className='revdp' src={require("../Assets/profile.png")}></img>
+      <img className='revdp' src={item.data.profile}></img>
       <img className='revrev' src={require("../Assets/5stars.png")}></img>
       </div>
       <div className='revcardch2'>
-        <span>Name user</span>
+        <span>{item.data.name}</span>
         <p>
-        Superb seller. Very attention to detail. Listen to your needs and draws accordingly, step by step, until completion. An amazing developer, a friend, which stands by our side until the gig is finished. Even after if you have any queries, he is prompt to help. Fantastic.
+       {item.data.desc}
         </p>
-        <h5>Fiverr</h5>
+        <h5>{item.data.platform}</h5>
       </div>
     </div>
     </SwiperSlide>

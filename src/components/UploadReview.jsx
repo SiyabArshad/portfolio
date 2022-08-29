@@ -13,15 +13,10 @@ export default function UploadReview() {
   const [show,setshow]=React.useState(false)
   const [message,setmessage]=React.useState("")
   const [file,setfile]=React.useState('')
-  const [source,setsource]=React.useState('')
-  const [name,setname]=React.useState('')
-  const [rev,setrev]=React.useState('')
-
-
   const uploadreviewfunction=async(e)=>{
     e.preventDefault()
     setloading(true)
-    if(file===''||name===''||source===''||rev==='')
+    if(file==='')
     {
       setloading(false)
       setshow(true)
@@ -72,10 +67,7 @@ export default function UploadReview() {
     // Upload completed successfully, now we can get the download URL
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {   
       addDoc(collection(db,"reviews"),{
-        review:rev,
-        platform:source,
-        name:name,
-        profile:downloadURL
+        rev:downloadURL
       }).then(()=>{
         setloading(false)
         setshow(true)
@@ -112,23 +104,7 @@ export default function UploadReview() {
       }
         <h3>Upload Review</h3>
         <div className='source'>
-            <label>Source</label>
-            <select value={source} onChange={(e)=>setsource(e.target.value)}>
-            <option value="Upwork">Upwork</option>
-            <option value="Fiverr">Fiverr</option>
-            <option value="Others">Others</option>
-        </select>
-        </div>
-        <div className='source'>
-            <label>Name</label>    
-            <input onChange={(e)=>setname(e.target.value)} value={name} type="text" placeholder="Client Name" required></input>
-        </div>
-        <div className='uprdesc'>
-            <label>Review</label>
-            <textarea onChange={(e)=>setrev(e.target.value)} value={rev} placeholder='review'></textarea>
-        </div>
-        <div className='source'>
-        <label>Client Image</label>
+        <label>Review Image</label>
         <input type="file" onChange={(e)=>setfile(e.target.files[0])} required accept="image/*"></input>
         </div>
         <button onClick={uploadreviewfunction}>Upload</button>

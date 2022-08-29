@@ -32,8 +32,9 @@ export default function AdminProjects({projects}) {
                         <h3>{item.data.name}</h3>
                         <p>
                           {
-                            item.data.desc
+                            item.data.desc.slice(0,300)
                           } 
+                          .....
                         </p>
                         <span onClick={()=>deletefunction(item.id)} className='github'>Delete</span>
                     </div>

@@ -2,7 +2,7 @@ import * as React from 'react'
 import "../stylesheets/project.css"
 import { Link } from 'react-router-dom'
 export default function Projects({projects}) {
-    const[index,setindex]=React.useState(5)
+    const[index,setindex]=React.useState(4)
     return (
     <div className='proman' id='projects'>
         <div className='promanch'>
@@ -13,7 +13,8 @@ export default function Projects({projects}) {
                     <div className='projectcard'>
                         <h3>{item.data.name}</h3>
                         <p>
-                        {item.data.desc}
+                        {item.data.desc.slice(0,300)}
+                        .....
                         </p>
                         <a className='link' href={item.data.url}><span className='github'>Github</span></a>
                         <Link className='link' to={`project/${item.id}`}><span className='details'>Details</span></Link>
@@ -23,7 +24,7 @@ export default function Projects({projects}) {
         </div>
        {
         index>5?
-        <span onClick={()=>setindex(5)} className='readmore'>showLess</span>
+        <span onClick={()=>setindex(4)} className='readmore'>showLess</span>
         :
         <span onClick={()=>setindex(projects?.length)} className='readmore'>Readmore</span>
        } 

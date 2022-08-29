@@ -56,10 +56,7 @@ export default function Details() {
             <h2 className='detpro'>
                 {projectinfo?.name}
             </h2>
-            <h4 className='detims'>
-                Project Images
-            </h4>
-
+         
             <Swiper
       modules={[Navigation, Pagination, Autoplay]}
       slidesPerView={1}
@@ -75,19 +72,12 @@ export default function Details() {
             )) 
         }
     </Swiper>
-    <p className='detdesc'>
+   <div className='det'>
+   <p className='detdesc'>
                 {projectinfo?.desc}
     </p>
-        
-            <h4 className='detims'>
-                Project Video
-            </h4>
-            <>
-            <video className='detvideo' controls>
-            <source src={projectinfo?.video} type="video/mp4" />
-                 Sorry, your browser doesn't support videos.
-                </video>
-            </>
+    
+   </div>
         </div>
     </div>
   )

@@ -67,19 +67,9 @@ export default function AdminReviews({reviews}) {
         return(
       <SwiperSlide>
       <div className='revcard'>
-      <div className='revcardch1'>
-      <img className='revdp' src={item.data.profile}></img>
-      <img className='revrev' src={require("../Assets/5stars.png")}></img>
-      </div>
-      <div className='revcardch2'>
-        <span>{item.data.name}</span>
-        <p>
-        {item.data.review}
-        </p>
-        <h5>{item.data.platform}</h5>
+      <img className='reviewprofileadmin' src={item?.data.rev}></img>
         <button onClick={()=>deletefunction(item.id)} className='delete'>Delete</button>
-      </div>
-    </div>
+     </div>
     </SwiperSlide>
         )
       })

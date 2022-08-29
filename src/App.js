@@ -21,7 +21,7 @@ export default function App() {
     <Route path="/project/:id" element={<Details/>}></Route>
     <Route path="/reset" element={!user?<Forgot/>:<Admin/>}></Route>
     <Route path="/login" element={!user?<Login/>:<Admin/>}></Route>
-    <Route path="/admin" element={user?<Admin/>:<Login/>}></Route>
+    <Route path="/admin" element={user&&<Admin/>}></Route>
     <Route path='*' element={<Pagnotfound/>}></Route>
     </Routes>
   </BrowserRouter>

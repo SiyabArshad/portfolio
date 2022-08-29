@@ -9,17 +9,29 @@
     cursor: pointer;
 }
 .detpro{
-    color: var(--grey3);
-    font-size: 1.3rem;
-    font-family: "poppinsmedium";
+    color: var(--yellow2);
+    font-size: 1.5rem;
+    font-family: "poppinsbold";
+    text-transform: uppercase;
+
+}
+.det{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
 }
 .detdesc{
-    
+    width: 50%;
     color: var(--grey3);
     line-height: 1.3rem;
     font-family: "poppinsregular";
     font-size: .8rem;
     text-align: justify;
+    margin: 1rem;
+    background-color: var(--black1);
+    padding: 1rem;
+    border-radius: .5rem;
 }
 .detims{
     color: var(--grey3);
@@ -37,7 +49,9 @@
   }
  
   @media only screen and (max-width: 600px) {
-        
+        .detdesc{
+            width: 90%;
+        }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

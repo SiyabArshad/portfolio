@@ -15,10 +15,8 @@ export default function UploadProject() {
     const [git,setgit]=React.useState('')
     const [name,setname]=React.useState('')
     const [desc,setdesc]=React.useState('')
-    const [videourls,setvideourls]=React.useState('')
     const [imgurls,setimgurls]=React.useState([])
-    const uploadproject=async(e)=>{
-        e.preventDefault()
+    const uploadproject=async()=>{
         setloading(true)
         try{
 
@@ -26,8 +24,7 @@ export default function UploadProject() {
                 name:name,
                 desc:desc,
                 url:git,
-                images:imgurls,
-                video:videourls
+                images:imgurls
             })
             setloading(false)
             setshow(true)
@@ -44,16 +41,20 @@ export default function UploadProject() {
         }
     }
 
+
+
+    
     const uploadimage=(e)=>{
-      setimgurls([])
+      e.preventDefault()
         for (var i = 0; i < e.target.files.length; i++) {
+            setloading(true)
             let imageFile = e.target.files[i];
-            uploadimagesfunction(imageFile)
+            uploadimagesfunction(imageFile).then((url)=>setimgurls(old=>[...old,url]))
         }
     }
     //for slider images
     const uploadimagesfunction=async(filename)=>{
-        setloading(true)
+        return new Promise((resolve,reject)=>{
         const storageRef = ref(storage, "projectimages/" + filename.name);
         const uploadTask = uploadBytesResumable(storageRef, filename);
         uploadTask.on('state_changed',
@@ -74,11 +75,11 @@ export default function UploadProject() {
       // https://firebase.google.com/docs/storage/web/handle-errors
       switch (error.code) {
         case 'storage/unauthorized':
-        setloading(false)  
+            setloading(false)
         // User doesn't have permission to access the object
           break;
         case 'storage/canceled':
-            setloading(false)  
+            setloading(false)
         // User canceled the upload
           break;
       
@@ -86,7 +87,6 @@ export default function UploadProject() {
       
         case 'storage/unknown':
             setloading(false)
-          // Unknown error occurred, inspect error.serverResponse
           break;
       
       }
@@ -94,64 +94,20 @@ export default function UploadProject() {
       () => {
       // Upload completed successfully, now we can get the download URL
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {   
-        setloading(false)
-        imgurls.push(downloadURL)        
+        resolve(downloadURL)
+        setloading(false)    
       });
       }
       );
+        })
+
+        
 }
 
-
-    //project videos
-    const uploadvideofunction=async(e)=>{
-        setloading(true)   
-            const storageRef = ref(storage, "projectvideos/" + e.target.files[0].name);
-            const uploadTask = uploadBytesResumable(storageRef, e.target.files[0]);
-            uploadTask.on('state_changed',
-          (snapshot) => {
-          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          switch (snapshot.state) {
-            case 'paused':
-              console.log('Upload is paused');
-              break;
-            case 'running':
-              console.log('Upload is running');
-              break;
-          }
-          }, 
-          (error) => {
-          // A full list of error codes is available at
-          // https://firebase.google.com/docs/storage/web/handle-errors
-          switch (error.code) {
-            case 'storage/unauthorized':
-                setloading(false)
-              // User doesn't have permission to access the object
-              break;
-            case 'storage/canceled':
-                setloading(false)
-              // User canceled the upload
-              break;
-          
-            // ...
-          
-            case 'storage/unknown':
-                setloading(false)
-              // Unknown error occurred, inspect error.serverResponse
-              break;
-          
-          }
-          }, 
-          () => {
-          // Upload completed successfully, now we can get the download URL
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {   
-            setloading(false)
-            setvideourls(downloadURL)        
-          });
-          }
-          );
-    }
-
+React.useState(()=>{
+    setimgurls([])
+},[])
+    
     if(loading)
     {
         return(
@@ -182,10 +138,6 @@ export default function UploadProject() {
         <div className='source'>
             <label>Github</label>    
             <input onChange={(e)=>setgit(e.target.value)} type="url" placeholder="Project url" required></input>
-        </div>
-        <div className='source'>
-        <label>Project Video</label>
-        <input onChange={(e)=>uploadvideofunction(e)} type="file" required accept="video/*"></input>
         </div>
         <button disabled={name===''||desc===''} onClick={uploadproject}>Upload</button>
     </div>

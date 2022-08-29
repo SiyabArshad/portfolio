@@ -40,6 +40,15 @@
     padding: .5rem 1rem;
     cursor: pointer;
 }
+.dlcv{
+    background-color: var(--black2);
+    border-style: none;
+    border-radius: .2rem;
+    border: 1px solid var(--yellow2);
+    color: var(--white);
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
 .tpbch2{
     width: 50%;
     display: flex;

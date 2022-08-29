@@ -19,7 +19,7 @@ export default function Topbar({cv}) {
             <br></br>
             <span className='tpbname3'>an FullStack Developer.</span>
             <div className='tpbdesc'>
-            <button onClick={downloadfunc}>
+            <button className='dlcv' onClick={downloadfunc}>
                 Download CV
             </button>
          </div>
